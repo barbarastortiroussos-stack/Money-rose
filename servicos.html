@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serviços — Vinha & Cia</title>
+<meta name="description" content="Conheça os serviços de marketing, gestão estratégica e mentoria financeira da Vinha & Cia. Fale com a gente pelo WhatsApp.">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* estilos específicos desta página */
+  .pagina-hero{
+    background: linear-gradient(165deg, var(--vinho-profundo) 0%, var(--vinho) 100%);
+    color: var(--creme);
+    padding: 76px 0 64px;
+    text-align: center;
+  }
+  .pagina-hero .eyebrow{ color: var(--dourado-claro); display:block; margin-bottom: 14px; }
+  .pagina-hero h1{ color: var(--creme); font-size: clamp(2.1rem, 3.6vw, 3rem); margin-bottom: 16px; }
+  .pagina-hero p{ color: rgba(247,238,225,0.8); max-width: 56ch; margin: 0 auto; }
+
+  .bloco-servico{
+    padding: 88px 0;
+    border-bottom: 1px solid rgba(42,18,16,0.1);
+  }
+  .bloco-servico:nth-child(even){ background: var(--creme-escuro); }
+  .bloco-grid{
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .bloco-intro .eyebrow{ display:block; margin-bottom: 12px; }
+  .bloco-intro h2{ font-size: 1.9rem; margin-bottom: 14px; }
+  .bloco-intro p{ color: var(--tinta-suave); }
+  .bloco-numero{
+    font-family: var(--fonte-display);
+    font-style: italic;
+    color: var(--dourado);
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .lista-itens{ list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+  .lista-itens li{
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--creme);
+    border: 1px solid rgba(42,18,16,0.1);
+    border-radius: 6px;
+    padding: 18px 20px;
+  }
+  .bloco-servico:nth-child(even) .lista-itens li{ background: var(--creme); }
+  .lista-itens svg{ flex-shrink: 0; width: 20px; height: 20px; margin-top: 2px; }
+  .lista-itens strong{ display: block; font-family: var(--fonte-display); font-weight: 600; color: var(--vinho-profundo); margin-bottom: 3px; }
+  .lista-itens span{ font-size: 0.92rem; color: var(--tinta-suave); }
+
+  @media (max-width: 860px){
+    .bloco-grid{ grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  .whats-secao{
+    background: linear-gradient(155deg, var(--cereja) 0%, var(--vinho) 100%);
+    color: var(--creme);
+    text-align: center;
+    padding: 100px 0;
+  }
+  .whats-secao .eyebrow{ color: var(--dourado-claro); display:block; margin-bottom: 14px; }
+  .whats-secao h2{ color: var(--creme); font-size: clamp(1.9rem, 3.2vw, 2.5rem); margin-bottom: 16px; }
+  .whats-secao p{ color: rgba(247,238,225,0.85); max-width: 52ch; margin: 0 auto 36px; }
+  .whats-card{
+    max-width: 460px;
+    margin: 0 auto;
+    background: rgba(247,238,225,0.08);
+    border: 1px solid rgba(247,238,225,0.22);
+    border-radius: 10px;
+    padding: 36px 32px;
+  }
+  .whats-card svg.icone-grande{ width: 44px; height: 44px; fill: var(--dourado-claro); margin: 0 auto 18px; }
+  .whats-card p.legenda{ font-size: 0.88rem; color: rgba(247,238,225,0.65); margin-top: 16px; margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="container">
+    <a href="index.html" class="marca">
+      <svg class="marca-selo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" class="selo-linha" stroke-width="1.5"/>
+        <circle cx="50" cy="50" r="38" class="selo-linha" stroke-width="1"/>
+        <path d="M50 20 L56 44 L80 50 L56 56 L50 80 L44 56 L20 50 L44 44 Z" fill="var(--dourado)"/>
+      </svg>
+      <span class="marca-texto">Vinha & Cia<span>Marketing · Gestão · Mentoria</span></span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="servicos.html" class="ativo">Serviços</a></li>
+        <li><a href="index.html#abordagem">Abordagem</a></li>
+        <li><a href="#whatsapp">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="#whatsapp" class="btn btn-dourado"><span>Falar no WhatsApp</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="pagina-hero">
+    <div class="container">
+      <span class="eyebrow">Nossos serviços</span>
+      <h1>Marketing, gestão e finanças, lado a lado</h1>
+      <p>Cada frente pode ser contratada isoladamente ou de forma integrada — o ponto de partida é sempre entender o momento do seu negócio.</p>
+    </div>
+  </section>
+
+  <!-- MARKETING -->
+  <section class="bloco-servico reveal">
+    <div class="container bloco-grid">
+      <div class="bloco-intro">
+        <span class="bloco-numero">01 — Marketing</span>
+        <h2>Presença que atrai o público certo</h2>
+        <p>Cuidamos do posicionamento da marca e da comunicação no dia a dia, sempre com metas claras por trás de cada ação — nada de postar por postar.</p>
+      </div>
+      <ul class="lista-itens">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div><strong>Posicionamento de marca</strong><span>Definição de tom de voz, identidade e diferenciais frente à concorrência.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg>
+          <div><strong>Gestão de redes sociais</strong><span>Planejamento de conteúdo, calendário editorial e produção de posts.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><path d="M3 11l18-7-7 18-2-8-9-3z"/></svg>
+          <div><strong>Campanhas de tráfego pago</strong><span>Anúncios com público, verba e metas definidas para gerar retorno real.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M14 3v5h5"/></svg>
+          <div><strong>Relatórios de desempenho</strong><span>Acompanhamento periódico dos resultados de cada campanha e canal.</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GESTÃO ESTRATÉGICA -->
+  <section class="bloco-servico reveal">
+    <div class="container bloco-grid">
+      <div class="bloco-intro">
+        <span class="bloco-numero">02 — Gestão estratégica</span>
+        <h2>Decisões apoiadas em dados</h2>
+        <p>Organizamos processos e metas para que o crescimento do negócio não dependa apenas de intuição — e sim de um plano acompanhado de perto.</p>
+      </div>
+      <ul class="lista-itens">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+          <div><strong>Diagnóstico do negócio</strong><span>Levantamento de processos, números e gargalos que travam o crescimento.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+          <div><strong>Planejamento estratégico</strong><span>Metas de curto, médio e longo prazo, com indicadores acompanháveis.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+          <div><strong>Organização de processos</strong><span>Rotinas e responsáveis definidos para reduzir retrabalho e ruído interno.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><path d="M12 20l-7-4V8l7-4 7 4v8l-7 4z"/></svg>
+          <div><strong>Consultoria contínua</strong><span>Encontros periódicos para revisar decisões e ajustar a rota do negócio.</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MENTORIA FINANCEIRA -->
+  <section class="bloco-servico reveal">
+    <div class="container bloco-grid">
+      <div class="bloco-intro">
+        <span class="bloco-numero">03 — Mentoria financeira</span>
+        <h2>Saúde financeira para sustentar o crescimento</h2>
+        <p>Ajudamos a organizar as finanças do negócio (e, quando faz sentido, também as pessoais de quem empreende), com clareza sobre para onde o dinheiro vai.</p>
+      </div>
+      <ul class="lista-itens">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <div><strong>Organização de fluxo de caixa</strong><span>Controle claro de entradas e saídas, com visão de curto e médio prazo.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
+          <div><strong>Precificação estratégica</strong><span>Cálculo de preços que cobrem custos e sustentam a margem do negócio.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+          <div><strong>Planejamento de investimentos</strong><span>Direcionamento sobre onde reinvestir os resultados com mais segurança.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cereja)" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M8 16h5M8 8h8"/></svg>
+          <div><strong>Educação financeira aplicada</strong><span>Sessões de mentoria para ganhar autonomia nas próprias decisões.</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHATSAPP -->
+  <section class="whats-secao" id="whatsapp">
+    <div class="container reveal">
+      <span class="eyebrow">Vamos conversar</span>
+      <h2>Fale diretamente com a gente</h2>
+      <p>Conte um pouco sobre o seu negócio e o momento atual — respondemos pelo WhatsApp para entender como podemos ajudar.</p>
+      <div class="whats-card">
+        <svg class="icone-grande" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.098 3 3.5 8.598 3.5 15.5c0 2.43.71 4.7 1.94 6.6L3.5 29l7.09-1.9a12.44 12.44 0 0 0 5.41 1.25h.005c6.902 0 12.5-5.598 12.5-12.5S22.903 3 16.001 3zm0 22.6c-1.77 0-3.44-.47-4.9-1.32l-.35-.2-3.79 1.02 1.03-3.7-.23-.38a10.42 10.42 0 0 1-1.6-5.52c0-5.78 4.71-10.49 10.5-10.49 2.8 0 5.44 1.09 7.42 3.07a10.4 10.4 0 0 1 3.08 7.42c0 5.78-4.71 10.5-10.5 10.5zm5.75-7.87c-.31-.16-1.85-.91-2.14-1.02-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-1 1.23-.18.21-.37.23-.68.08-.31-.16-1.32-.49-2.51-1.55-.93-.83-1.56-1.85-1.74-2.16-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.02-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.23 3.41 5.41 4.78.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.85-.76 2.11-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.36z"/></svg>
+        <!--
+          ATENÇÃO: troque o número abaixo pelo seu, no formato internacional,
+          apenas números (código do país + DDD + número). Exemplo para o Brasil:
+          551199999999
+        -->
+        <a href="https://wa.me/55SEUNUMEROAQUI?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os." class="btn btn-whatsapp" style="width:100%; justify-content:center;">
+          Chamar no WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <p class="legenda">Atendimento em horário comercial. Retorno em até 1 dia útil.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-marca">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" class="selo-linha" stroke-width="1.5"/>
+            <path d="M50 20 L56 44 L80 50 L56 56 L50 80 L44 56 L20 50 L44 44 Z" fill="var(--dourado)"/>
+          </svg>
+          <span>Vinha & Cia</span>
+        </div>
+        <p style="max-width:34ch; font-size:0.92rem;">Marketing, gestão estratégica e mentoria financeira em um único acompanhamento, pensado para durar.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="index.html#abordagem">Abordagem</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#whatsapp">Falar no WhatsApp</a></li>
+          <li><a href="#">contato@vinhaecia.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 Vinha & Cia. Todos os direitos reservados.</span>
+      <span>Feito com estratégia.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#whatsapp" class="whats-flutuante" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.098 3 3.5 8.598 3.5 15.5c0 2.43.71 4.7 1.94 6.6L3.5 29l7.09-1.9a12.44 12.44 0 0 0 5.41 1.25h.005c6.902 0 12.5-5.598 12.5-12.5S22.903 3 16.001 3zm0 22.6c-1.77 0-3.44-.47-4.9-1.32l-.35-.2-3.79 1.02 1.03-3.7-.23-.38a10.42 10.42 0 0 1-1.6-5.52c0-5.78 4.71-10.49 10.5-10.49 2.8 0 5.44 1.09 7.42 3.07a10.4 10.4 0 0 1 3.08 7.42c0 5.78-4.71 10.5-10.5 10.5zm5.75-7.87c-.31-.16-1.85-.91-2.14-1.02-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-1 1.23-.18.21-.37.23-.68.08-.31-.16-1.32-.49-2.51-1.55-.93-.83-1.56-1.85-1.74-2.16-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.02-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.23 3.41 5.41 4.78.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.85-.76 2.11-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.36z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>

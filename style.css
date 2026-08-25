@@ -1,0 +1,548 @@
+/* ============================================================
+   VINHA & CIA — sistema de design
+   Paleta: vinho profundo, vermelho cereja, dourado, creme
+   Tipografia: Fraunces (display, serifado, caloroso) + Manrope (corpo)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root{
+  /* cores */
+  --vinho-profundo: #2A060C;
+  --vinho: #3E0B15;
+  --vinho-claro: #5C1220;
+  --cereja: #9E1B32;
+  --cereja-viva: #B8223B;
+  --dourado: #C9A227;
+  --dourado-claro: #E4C876;
+  --dourado-fosco: #8C7020;
+  --creme: #F7EEE1;
+  --creme-escuro: #EDE0CC;
+  --tinta: #2A1210;
+  --tinta-suave: #5A3A38;
+
+  /* tipografia */
+  --fonte-display: 'Fraunces', 'Iowan Old Style', serif;
+  --fonte-corpo: 'Manrope', 'Segoe UI', sans-serif;
+
+  /* espaçamento */
+  --max-largura: 1180px;
+  --raio: 4px;
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--creme);
+  color: var(--tinta);
+  font-family: var(--fonte-corpo);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *, *::before, *::after{
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+img{ max-width: 100%; display: block; }
+
+a{ color: inherit; }
+
+h1, h2, h3, h4{
+  font-family: var(--fonte-display);
+  font-weight: 600;
+  margin: 0 0 0.5em;
+  color: var(--vinho-profundo);
+  letter-spacing: -0.01em;
+}
+
+p{ margin: 0 0 1em; }
+
+.container{
+  max-width: var(--max-largura);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.eyebrow{
+  font-family: var(--fonte-corpo);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dourado-fosco);
+}
+
+/* ---------- foco visível (acessibilidade) ---------- */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible{
+  outline: 2px solid var(--dourado);
+  outline-offset: 3px;
+}
+
+/* ---------- botões ---------- */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--fonte-corpo);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  padding: 15px 30px;
+  border-radius: var(--raio);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.btn-dourado{
+  background: linear-gradient(180deg, var(--dourado-claro), var(--dourado));
+  color: var(--vinho-profundo);
+  box-shadow: 0 8px 24px -10px rgba(201,162,39,0.55);
+}
+.btn-dourado:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -8px rgba(201,162,39,0.65);
+}
+.btn-linha{
+  background: transparent;
+  color: var(--creme);
+  border-color: rgba(247,238,225,0.4);
+}
+.btn-linha:hover{
+  border-color: var(--dourado-claro);
+  color: var(--dourado-claro);
+}
+.btn-linha-escuro{
+  background: transparent;
+  color: var(--vinho-profundo);
+  border-color: var(--vinho-profundo);
+}
+.btn-linha-escuro:hover{
+  background: var(--vinho-profundo);
+  color: var(--creme);
+}
+.btn-whatsapp{
+  background: linear-gradient(180deg, #37c26b, #1f9e50);
+  color: #fff;
+  box-shadow: 0 8px 24px -10px rgba(31,158,80,0.55);
+}
+.btn-whatsapp:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -8px rgba(31,158,80,0.65);
+}
+.btn svg{ width: 18px; height: 18px; flex-shrink: 0; }
+
+/* ---------- topo / navegação ---------- */
+.topo{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(42,6,12,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(201,162,39,0.25);
+}
+.topo .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+}
+.marca{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--creme);
+}
+.marca-selo{ width: 34px; height: 34px; flex-shrink: 0; }
+.marca-texto{
+  font-family: var(--fonte-display);
+  font-size: 1.28rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+.marca-texto span{
+  display: block;
+  font-family: var(--fonte-corpo);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--dourado-claro);
+  margin-top: 4px;
+}
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a{
+  text-decoration: none;
+  color: var(--creme-escuro);
+  font-size: 0.92rem;
+  font-weight: 600;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover{ color: var(--dourado-claro); }
+.nav-links a.ativo{ color: var(--dourado-claro); }
+.nav-links a.ativo::after{
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 2px;
+  background: var(--dourado);
+}
+.nav-cta{ display: flex; align-items: center; gap: 18px; }
+.menu-toggle{
+  display: none;
+  background: none;
+  border: none;
+  color: var(--creme);
+  cursor: pointer;
+}
+
+@media (max-width: 860px){
+  .nav-links{
+    position: absolute;
+    top: 84px; left: 0; right: 0;
+    background: var(--vinho-profundo);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid rgba(201,162,39,0.25);
+  }
+  .nav-links.aberto{ max-height: 320px; }
+  .nav-links li{ width: 100%; }
+  .nav-links a{ display: block; padding: 16px 32px; width: 100%; }
+  .nav-links a.ativo::after{ display: none; }
+  .menu-toggle{ display: block; }
+  .nav-cta .btn span{ display: none; }
+}
+
+/* ---------- selo ornamental (elemento assinatura) ---------- */
+.selo-linha{ stroke: var(--dourado); fill: none; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position: relative;
+  background:
+    radial-gradient(ellipse 900px 500px at 82% -10%, rgba(201,162,39,0.16), transparent 60%),
+    linear-gradient(165deg, var(--vinho-profundo) 0%, var(--vinho) 55%, var(--vinho-claro) 100%);
+  color: var(--creme);
+  overflow: hidden;
+  padding: 108px 0 140px;
+}
+.hero::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(115deg, rgba(247,238,225,0.035) 0px, rgba(247,238,225,0.035) 1px, transparent 1px, transparent 68px);
+  pointer-events: none;
+}
+.hero-grid{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero-eyebrow{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--dourado-claro);
+  margin-bottom: 28px;
+}
+.hero-eyebrow .risco{ width: 40px; height: 1px; background: var(--dourado); }
+.hero h1{
+  color: var(--creme);
+  font-size: clamp(2.5rem, 4.4vw, 3.7rem);
+  line-height: 1.08;
+  margin-bottom: 26px;
+}
+.hero h1 em{
+  font-style: italic;
+  color: var(--dourado-claro);
+}
+.hero-sub{
+  font-size: 1.1rem;
+  color: rgba(247,238,225,0.82);
+  max-width: 46ch;
+  margin-bottom: 40px;
+}
+.hero-acoes{ display: flex; gap: 18px; flex-wrap: wrap; }
+.hero-selo-wrap{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-selo{
+  width: min(360px, 100%);
+  height: auto;
+  animation: girar 60s linear infinite;
+}
+@keyframes girar{ to{ transform: rotate(360deg); } }
+.hero-selo-fixo{
+  position: absolute;
+  width: 34%;
+}
+.hero-numeros{
+  position: relative;
+  display: flex;
+  gap: 48px;
+  margin-top: 72px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(247,238,225,0.16);
+}
+.hero-numero b{
+  display: block;
+  font-family: var(--fonte-display);
+  font-size: 1.9rem;
+  color: var(--dourado-claro);
+  font-weight: 600;
+}
+.hero-numero span{
+  font-size: 0.82rem;
+  color: rgba(247,238,225,0.68);
+}
+
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-selo-wrap{ order: -1; }
+  .hero-selo{ width: 220px; margin: 0 auto 12px; }
+  .hero-numeros{ flex-wrap: wrap; gap: 32px; }
+}
+
+/* ============================================================
+   SEÇÕES GERAIS
+   ============================================================ */
+section{ padding: 108px 0; }
+.secao-cabecalho{
+  max-width: 620px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+.secao-cabecalho .eyebrow{ display:block; margin-bottom: 14px; }
+.secao-cabecalho h2{ font-size: clamp(1.9rem, 3vw, 2.5rem); }
+.secao-cabecalho p{ color: var(--tinta-suave); font-size: 1.05rem; margin-top: 14px; }
+
+.reveal{
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visivel{ opacity: 1; transform: none; }
+
+/* ---------- pilares (3 serviços) ---------- */
+.pilares{ background: var(--creme); }
+.pilares-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(42,18,16,0.12);
+  border: 1px solid rgba(42,18,16,0.12);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.pilar{
+  background: var(--creme);
+  padding: 48px 38px;
+  transition: background 0.3s ease;
+}
+.pilar:hover{ background: var(--creme-escuro); }
+.pilar-icone{
+  width: 46px; height: 46px;
+  margin-bottom: 26px;
+}
+.pilar h3{ font-size: 1.28rem; margin-bottom: 12px; }
+.pilar p{ color: var(--tinta-suave); font-size: 0.96rem; margin-bottom: 0; }
+.pilar-marca{
+  display: block;
+  width: 26px; height: 3px;
+  background: var(--cereja);
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+@media (max-width: 860px){
+  .pilares-grid{ grid-template-columns: 1fr; }
+}
+
+/* ---------- processo (sequência real, por isso numerada) ---------- */
+.processo{
+  background: var(--vinho-profundo);
+  color: var(--creme);
+  position: relative;
+}
+.processo-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+.etapa{ position: relative; padding-top: 8px; }
+.etapa-num{
+  font-family: var(--fonte-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--dourado);
+  display: block;
+  margin-bottom: 18px;
+}
+.etapa h3{ color: var(--creme); font-size: 1.12rem; margin-bottom: 10px; }
+.etapa p{ color: rgba(247,238,225,0.68); font-size: 0.92rem; margin-bottom: 0; }
+.etapa::before{
+  content: '';
+  position: absolute;
+  top: -32px; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--dourado), transparent);
+}
+
+@media (max-width: 860px){
+  .processo-grid{ grid-template-columns: 1fr 1fr; row-gap: 48px; }
+}
+@media (max-width: 540px){
+  .processo-grid{ grid-template-columns: 1fr; }
+}
+
+/* ---------- citação ---------- */
+.citacao{
+  background: var(--creme-escuro);
+  text-align: center;
+}
+.citacao blockquote{
+  max-width: 720px;
+  margin: 0 auto;
+  font-family: var(--fonte-display);
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  color: var(--vinho-profundo);
+  line-height: 1.5;
+}
+.citacao .aspas{
+  font-family: var(--fonte-display);
+  font-size: 3.4rem;
+  color: var(--dourado);
+  line-height: 1;
+  display: block;
+  margin-bottom: 12px;
+}
+.citacao cite{
+  display: block;
+  margin-top: 24px;
+  font-style: normal;
+  font-family: var(--fonte-corpo);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+/* ---------- CTA final ---------- */
+.cta-final{
+  background: linear-gradient(155deg, var(--cereja) 0%, var(--vinho) 100%);
+  color: var(--creme);
+  text-align: center;
+}
+.cta-final h2{ color: var(--creme); font-size: clamp(1.9rem, 3.2vw, 2.6rem); }
+.cta-final p{
+  color: rgba(247,238,225,0.85);
+  max-width: 50ch;
+  margin: 0 auto 36px;
+}
+.cta-acoes{ display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+footer{
+  background: var(--vinho-profundo);
+  color: rgba(247,238,225,0.7);
+  padding: 64px 0 32px;
+}
+.footer-grid{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(247,238,225,0.12);
+}
+.footer-marca{ display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.footer-marca svg{ width: 30px; height: 30px; }
+.footer-marca span{
+  font-family: var(--fonte-display);
+  font-size: 1.15rem;
+  color: var(--creme);
+}
+.footer-col h4{
+  color: var(--dourado-claro);
+  font-family: var(--fonte-corpo);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.footer-col ul{ list-style: none; margin: 0; padding: 0; }
+.footer-col li{ margin-bottom: 12px; }
+.footer-col a{ text-decoration: none; color: inherit; font-size: 0.92rem; transition: color 0.2s ease; }
+.footer-col a:hover{ color: var(--dourado-claro); }
+.footer-base{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 28px;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 720px){
+  .footer-grid{ grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ---------- botão flutuante do WhatsApp ---------- */
+.whats-flutuante{
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 50;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #37c26b, #1f9e50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px -8px rgba(0,0,0,0.45);
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+.whats-flutuante:hover{ transform: scale(1.07); }
+.whats-flutuante svg{ width: 28px; height: 28px; fill: #fff; }
